@@ -27,8 +27,22 @@ class _04_SearchTest {
 	public void testInterpolationSearch() {
 		//3. use the assertEquals method to test your interpolation search method.
 		//   remember that the array must be sorted and evenly distributed
-		int[] i = {2,4,6,8,10,12,14,16,18,20,22,24};
-		assertEquals(6,_02_InterpolationSearch.interpolationSearch(i,14));
+		//int[] i = {2,4,6,8,10,12,14,16,18,20,22,24};
+		//assertEquals(6,_02_InterpolationSearch.interpolationSearch(i,14));
+		int[] arr0 = {0, 1, 2, 3, 4, 5};
+		assertEquals(0, _02_InterpolationSearch.interpolationSearch(arr0, 0));
+		assertEquals(1, _02_InterpolationSearch.interpolationSearch(arr0, 1));
+		assertEquals(2, _02_InterpolationSearch.interpolationSearch(arr0, 2));
+		assertEquals(3, _02_InterpolationSearch.interpolationSearch(arr0, 3));
+		assertEquals(4, _02_InterpolationSearch.interpolationSearch(arr0, 4));
+		assertEquals(-1, _02_InterpolationSearch.interpolationSearch(arr0, 55));
+		
+		int[] arr1 = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39};
+		assertEquals(0, _02_InterpolationSearch.interpolationSearch(arr1, 3));
+		assertEquals(1, _02_InterpolationSearch.interpolationSearch(arr1, 6));
+		assertEquals(2, _02_InterpolationSearch.interpolationSearch(arr1, 9));
+		assertEquals(3, _02_InterpolationSearch.interpolationSearch(arr1, 12));
+		assertEquals(-1, _02_InterpolationSearch.interpolationSearch(arr1, 4));
 	}
 	
 	@Test

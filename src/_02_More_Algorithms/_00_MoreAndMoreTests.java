@@ -35,9 +35,12 @@ public class _00_MoreAndMoreTests {
 	  }
 
 	public boolean isPrime (int i) {
-		
-		
-		return false;
+		for (int j = 2; j < i; j++) {
+			if(i%j == 0) {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	@Test
@@ -53,7 +56,12 @@ public class _00_MoreAndMoreTests {
 	    assertFalse(isSquare(143));
 
 	  }
-
+	boolean isSquare(double i) {
+		if(i%Math.sqrt(i) == 0) {
+			return true;
+		}
+		return false;
+	}
 	@Test
 	  public void CubeTest() {
 
@@ -66,7 +74,13 @@ public class _00_MoreAndMoreTests {
 	    assertFalse(isCube(143));
 
 	  }
-
+	
+	boolean isCube(double i) {
+		if(i%Math.cbrt(i) == 0) {
+			return true;
+		}
+		return false;
+	}
 
 
 }

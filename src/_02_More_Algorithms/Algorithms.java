@@ -3,6 +3,7 @@ package _02_More_Algorithms;
 import java.util.List;
 
 public class Algorithms {
+	
 	public static int findBrokenEgg(List<String> eggs) {
 		for (int i = 0; i < eggs.size(); i++) {
 			if(eggs.get(i).equals("cracked")) {
@@ -51,12 +52,57 @@ public class Algorithms {
 	
 //---	
 	
-	public static boolean containsSOS() {
-		
+	public static boolean containsSOS(List<String> words) {
+		for (int i = 0; i < words.size(); i++) {
+			if(words.get(i).equals(" ... --- ... ")) {
+				return true; 
+			}
+		}
+		return false; 
 	}
 	
+//---
+
+	public static List<Double> sortScores(List<Double> scores) {
+		boolean done = false; 
+		while(!done) {
+			done = true;
+			for (int i = 1; i < scores.size(); i++) {
+				if(scores.get(i-1) >= scores.get(i)) {
+					double temp; 
+					temp = scores.get(i-1);
+					scores.set(i-1, scores.get(i));
+					scores.set(i, temp);
+					done = false;
+				}
+			}
+		}
+		return scores;
+	}
+
+//---
+
+	public static List<String> sortDNA(List<String> words) {
+		boolean done = false; 
+		while(!done) {
+			done = true;
+			for (int i = 1; i < words.size(); i++) {
+				if(words.get(i-1).length() >= words.get(i).length()) {
+					String temp; 
+					temp = words.get(i-1);
+					words.set(i-1, words.get(i));
+					words.set(i, temp);
+					done = false;
+				}
+			}
+		}
+		return words;
+	}
+
+
+
 	
 	
-	
+//---	
 	
 }

@@ -98,11 +98,28 @@ public class Algorithms {
 		}
 		return words;
 	}
-
-
-
-	
 	
 //---	
+	
+	public static List<String> sortWords(List<String> words){
+		boolean done = false; 
+		while(!done) {
+			done = true;
+			for (int i = 1; i < words.size(); i++) {
+				if(words.get(i-1).compareTo(words.get(i)) > 0) {
+					String temp; 
+					temp = words.get(i-1);
+					words.set(i-1, words.get(i));
+					words.set(i, temp);
+					done = false;
+				}
+			}
+		}
+		return words;
+	}
+	
+	
+	
+	
 	
 }
